@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Doximity.Api;
 using Doximity.WebApp.Models;
 
 namespace Doximity.WebApp.Controllers
@@ -7,8 +8,8 @@ namespace Doximity.WebApp.Controllers
     {
         public ActionResult Index()
         {
-            string url = string.Format("https://www.doximity.com/oauth/authorize?client_id={0}&redirect_uri={1}&response_type=code&scope=basic%20colleagues", 
-                Configuration.Instance.ClientId, Configuration.Instance.RedirectUri);
+            string url = DoximityDataAccess.ResolveAuthUrl(Configuration.Instance.ClientId,
+                Configuration.Instance.RedirectUri, "basic%20colleagues");
             
             return View(new IndexViewModel(url));
         }
