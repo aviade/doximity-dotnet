@@ -5,7 +5,6 @@ using System.Text;
 using System.Web.Mvc;
 using Doximity.WebApp.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApplication1;
 
 namespace Doximity.WebApp.Tests.Controllers
 {

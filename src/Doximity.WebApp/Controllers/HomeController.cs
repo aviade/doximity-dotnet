@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Doximity.WebApp.Models;
 
 namespace Doximity.WebApp.Controllers
 {
@@ -6,9 +7,9 @@ namespace Doximity.WebApp.Controllers
     {
         public ActionResult Index()
         {
-            const string clientId = "e5512e621ef26a5b702c6953c5154c6dd4bf5341b40a87c661a35415418d2039";
-            const string redirectUrl = "https%3A%2F%2Fdoximity.azurewebsites.net%2Fapi%2Fauth";
-            string url = string.Format("https://www.doximity.com/oauth/authorize?client_id={0}&redirect_uri={1}&response_type=code&scope=email", clientId, redirectUrl);
+            string url = string.Format("https://www.doximity.com/oauth/authorize?client_id={0}&redirect_uri={1}&response_type=code&scope=basic%20colleagues", 
+                Configuration.Instance.ClientId, Configuration.Instance.RedirectUri);
+            
             return View(new IndexViewModel(url));
         }
 

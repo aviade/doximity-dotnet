@@ -1,0 +1,1 @@
+﻿For running via IIS, make sure to enable the ASP.NET feature in your IIS http://www.netomatix.com/Development/IIS7_404Error.aspx
